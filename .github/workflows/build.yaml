@@ -1,0 +1,25 @@
+name: Build the dashboard
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - run: nix profile install github:tweag/nickel/stable
+      
+      - name: Build the dashboard
+        run: make build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dashboard.yaml
+          path: build/dashboard.yaml
