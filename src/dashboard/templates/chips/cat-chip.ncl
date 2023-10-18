@@ -1,4 +1,4 @@
-let Card = import "../../../lib/types/card.ncl" in
+let Card = import "../../../../lib/types/card.ncl" in
 
 let f : String -> _ = fun entityName =>
     {

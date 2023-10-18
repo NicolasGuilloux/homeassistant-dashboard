@@ -1,4 +1,4 @@
-let Area = import "../../../lib/types/area.ncl" in
+let Area = import "../../../../lib/types/area.ncl" in
 
 fun input =>
   let config = input | Area in

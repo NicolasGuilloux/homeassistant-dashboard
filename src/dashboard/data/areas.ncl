@@ -1,4 +1,4 @@
-let Room = import "../../lib/types/area.ncl" in
+let Room = import "../../../lib/types/area.ncl" in
 
 {
   livingroom = {

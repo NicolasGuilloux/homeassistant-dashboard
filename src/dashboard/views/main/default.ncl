@@ -1,4 +1,4 @@
-let titleCard = import "../../../lib/cards/minimalist/title-card.ncl" in
+let titleCard = import "../../../../lib/cards/minimalist/title-card.ncl" in
 
 {
   title = "Dashboard",

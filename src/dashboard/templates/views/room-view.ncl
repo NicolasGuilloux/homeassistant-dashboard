@@ -11,7 +11,7 @@ let Config = {
 in
 
 fun mArea mConfig =>
-  let area = mArea | (import "../../../lib/types/area.ncl") in
+  let area = mArea | (import "../../../../lib/types/area.ncl") in
   let config = mConfig | Config in
 
   let appendIfHas | forall a. String -> a -> Array a -> Array a = fun field element list =>

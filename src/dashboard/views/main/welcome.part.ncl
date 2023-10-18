@@ -40,24 +40,20 @@ in
           show_conditions = false,
           show_temperature = true,
         },
+      ],
+    },
+    {
+      type = '"custom:mushroom-chips-card",
+      alignment = "center",
+      style = m%"
+          ha-card {
+            padding-top: 1em;
+          }
+        "%,
+      chips = [
         (catChip "binary_sensor.pet_alf"),
         (catChip "binary_sensor.pet_arwen"),
         (catChip "binary_sensor.pet_albus"),
-        {
-          type = '"conditional",
-          conditions = [
-            { state_not = "0", entity = "sensor.guest_at_home" }
-          ],
-          chip = {
-            type = '"entity",
-            entity = "sensor.guest_at_home",
-            icon = "mdi:account-plus",
-            tap_action = {
-              action = "navigate",
-              navigation_path = "reseau",
-            },
-          },
-        }
       ],
     },
     {

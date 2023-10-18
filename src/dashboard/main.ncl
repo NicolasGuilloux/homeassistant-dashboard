@@ -1,4 +1,4 @@
-let Dashboard = import "../lib/types/dashboard.ncl" in
+let Dashboard = import "../../lib/types/dashboard.ncl" in
 
 {
   title = "Dashboard",

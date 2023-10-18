@@ -1,7 +1,7 @@
 # Imports
 let roomView = import "../../templates/views/room-view.ncl" in
-let gridCard = import "../../../lib/cards/builtins/grid-card.ncl" in
-let powerOutletCard = import "../../../lib/cards/minimalist/power-outlet-card.ncl" in
+let gridCard = import "../../../../lib/cards/builtins/grid-card.ncl" in
+let powerOutletCard = import "../../../../lib/cards/minimalist/power-outlet-card.ncl" in
 let areas = import "../../data/areas.ncl" in
 
 roomView
