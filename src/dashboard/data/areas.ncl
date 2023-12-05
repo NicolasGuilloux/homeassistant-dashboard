@@ -1,7 +1,8 @@
-let Room = import "../../../lib/types/area.ncl" in
+let Area = import "../../../lib/types/area.ncl" in
 
 {
   livingroom = {
+    id = "salon",
     name = "Salon",
     icon = "mdi:fireplace",
     color = "red",
@@ -13,6 +14,7 @@ let Room = import "../../../lib/types/area.ncl" in
     url = "salon",
   },
   kitchen = {
+    id = "cuisine",
     name = "Cuisine",
     icon = "mdi:knife",
     color = "blue",
@@ -24,6 +26,7 @@ let Room = import "../../../lib/types/area.ncl" in
     url = "cuisine",
   },
   entrance = {
+    id = "entree",
     name = "Entrée",
     icon = "mdi:door",
     color = "yellow",
@@ -33,21 +36,38 @@ let Room = import "../../../lib/types/area.ncl" in
     temperature_entity = "sensor.xiaomi_mijia_i_temperature",
     humidity_entity = "sensor.xiaomi_mijia_i_humidity",
   },
-  outdoor = {
+  garden = {
+    id = "jardin",
     name = "Pergola",
     icon = "mdi:flower-tulip",
     color = "green",
     floor = 0,
+    order = 4,
     light_entity = "light.ceilling_lamp_outdoor",
   },
   toilet = {
+    id = "toilettes",
     name = "Toilettes",
     icon = "mdi:toilet",
     color = "grey",
     floor = 0,
+    order = 5,
     light_entity = "light.aqara_e1_a",
   },
+  terrace = {
+    id = "veranda",
+    name = "Véranda",
+    icon = "mdi:rabbit",
+    color = "green",
+    floor = 0,
+    order = 6,
+    temperature_entity = "sensor.xiaomi_mijia_j_temperature",
+    humidity_entity = "sensor.xiaomi_mijia_j_humidity",
+  },
+
+  # First floor
   office = {
+    id = "bureau",
     name = "Bureau",
     icon = "mdi:desk",
     color = "purple",
@@ -59,6 +79,7 @@ let Room = import "../../../lib/types/area.ncl" in
     url = "bureau",
   },
   landing = {
+    id = "palier",
     name = "Palier",
     icon = "mdi:ceiling-light-multiple",
     color = "yellow",
@@ -69,6 +90,7 @@ let Room = import "../../../lib/types/area.ncl" in
     humidity_entity = "sensor.xiaomi_mijia_h_humidity",
   },
   bedroom = {
+    id = "chambre_a_coucher",
     name = "Chambre",
     icon = "mdi:bed-king",
     color = "blue",
@@ -79,6 +101,7 @@ let Room = import "../../../lib/types/area.ncl" in
     url = "bedroom",
   },
   elena_bedroom = {
+    id = "chambre_d_elena",
     name = "Chambre d'Eléna",
     icon = "mdi:baby",
     floor = 1,
@@ -87,10 +110,12 @@ let Room = import "../../../lib/types/area.ncl" in
     url = "chambre-elena",
   },
   friends_bedroom = {
+    id = "chambre_d_amis",
     name = "Chambre d'Amis",
     icon = "mdi:bed",
     floor = 1,
+    light_entity = "light.friends_bedroom_ceiling",
     temperature_entity = "sensor.xiaomi_mijia_e_temperature",
     humidity_entity = "sensor.xiaomi_mijia_e_humidity",
   },
-} | { _ : Room }
+} | { _ : Area }

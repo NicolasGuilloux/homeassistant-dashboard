@@ -71,20 +71,68 @@ in
   subview = true,
   cards = [
     roomChips {},
+    {
+      type = '"custom:auto-entities",
+      show_empty = false,
+      card = {
+        show_name = true,
+        show_icon = true,
+        show_state = false,
+        type = "glance",
+        title = "Plex",
+      },
+      filter.include = [
+        {
+          integration = "tautulli",
+          domain = "sensor",
+          entity_id = "*_etat",
+        }
+      ],
+      filter.exclude = [
+        {
+          state = "unknown",
+        }
+      ],
+    },
+    { type = '"custom:mushroom-title-card", title = "Annoncer" },
+    {
+      type = '"custom:vertical-stack-in-card",
+      style = m%"
+          ha-card {
+            padding-top: 1em;
+            padding-bottom: 1em;
+          }
+        "%,
+      cards = [
+        {
+          type = '"tile",
+          name = "Annoncer",
+          entity = "input_select.annoucing_area",
+          hide_state = true,
+        },
+        {
+          type = "custom:notify-card",
+          target = "script.texttospeech",
+          label = "Votre message",
+          card_title = "",
+        },
+      ],
+    },
     { type = '"custom:mushroom-title-card", title = "Mewenn" },
+    {
+      type = '"tile",
+      entity = "switch.transmission_turtle_mode",
+      color = "teal",
+      show_entity_picture = false,
+      vertical = true,
+      hide_state = true,
+    },
     computerStats
       {
         cpu_entity = "sensor.novermewenn_cpu",
         ram_entity = "sensor.novermewenn_ram",
         temp_entity = "sensor.novermewenn_temp",
         max_ram = 32000,
-      },
-    { type = '"custom:mushroom-title-card", title = "Noan" },
-    computerStats
-      {
-        cpu_entity = "sensor.novernoan_cpu",
-        ram_entity = "sensor.novernoan_ram",
-        max_ram = 1800,
       },
     { type = '"custom:mushroom-title-card", title = "Imprimante" },
     {

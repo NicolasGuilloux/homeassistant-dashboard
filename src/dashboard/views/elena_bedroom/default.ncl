@@ -21,13 +21,14 @@ roomView
         },
       },
       {
-        type = '"picture-entity",
+        type = '"custom:button-card",
         entity = "camera.g3_instant_high",
-        camera_view = "live",
-        camera_image = "camera.g3_instant_high",
-        tap_action.action = "more-info",
-        show_state = false,
-        show_name = false,
-      },
+        template = "custom_card_camera",
+        show_icon = false,
+        variables = {
+          ulm_custom_card_camera_title = false,
+          ulm_custom_card_camera_aspect_ratio = "16:9",
+        },
+      }
     ],
   }

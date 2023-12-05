@@ -6,6 +6,7 @@ let Nullable = fun contract label value =>
 in
 
 {
+  id | String,
   name | String,
   icon | String,
   color

@@ -33,18 +33,32 @@ roomView
             },
           ],
         },
+      {
+        type = '"custom:button-card",
+        template = ["card_media_player"],
+        entity = "media_player.televiseur_de_la_chambre",
+        variables = {
+          ulm_card_media_player_enable_art = true,
+          ulm_card_media_player_enable_controls = true,
+          ulm_card_media_player_enable_volume_slider = true,
+          ulm_card_media_player_collapsible = true,
+          ulm_card_media_player_enable_popup = true,
+          ulm_card_media_player_more_info = true,
+          ulm_card_media_player_power_button = true,
+        },
+      },
       gridCard
         {
           cards = [
-            powerOutletCard
-              {
-                entity = "switch.tuya_smart_plug_orange_switch",
-                name = "Ventilateur",
-                icon = "mdi:fan",
-                consumption_sensor = "sensor.tuya_smart_plug_orange_active_power",
-                color = "purple",
-                force_background_color = true,
-              },
+            # powerOutletCard
+            # {
+            # entity = "switch.tuya_smart_plug_orange_switch",
+            # name = "Ventilateur",
+            # icon = "mdi:fan",
+            # consumption_sensor = "sensor.tuya_smart_plug_orange_active_power",
+            # color = "purple",
+            # force_background_color = true,
+            # },
             powerOutletCard
               {
                 entity = "switch.tuya_smart_plug_blue_switch",

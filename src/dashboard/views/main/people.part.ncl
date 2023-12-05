@@ -21,14 +21,14 @@ in
       cards = [
         peopleCard
           {
-            name = "Nicolas",
+            name = "Nico",
             entity = "person.nicolas_guilloux",
             driving_entity = "binary_sensor.nicolas_driving",
             phone_base_entity = "sensor.nover_phone",
           },
         peopleCard
           {
-            name = "Laurianne",
+            name = "Lolo",
             entity = "person.laurianne_thomann",
             driving_entity = "binary_sensor.laurianne_driving",
             phone_base_entity = "sensor.iphone_de_laurianne",
