@@ -8,13 +8,37 @@ let roomChips = import "../../templates/chips/room-chips.ncl" in
   cards = [
     roomChips {},
     {
-      type = '"picture-entity",
-      entity = "camera.g3_instant_high",
-      camera_view = "live",
-      camera_image = "camera.g3_instant_high",
-      tap_action.action = "more-info",
-      show_state = false,
-      show_name = false,
+      type = '"custom:button-card",
+      entity = "camera.camera_livingroom_high",
+      template = "custom_card_camera",
+      show_icon = false,
+      variables = {
+        ulm_custom_card_camera_title = true,
+        ulm_custom_card_camera_aspect_ratio = "16:9",
+        ulm_custom_card_camera_label = "Salon",
+      },
     },
+    {
+      type = '"custom:button-card",
+      entity = "camera.camera_bedroom_elena_high",
+      template = "custom_card_camera",
+      show_icon = false,
+      variables = {
+        ulm_custom_card_camera_title = true,
+        ulm_custom_card_camera_aspect_ratio = "16:9",
+        ulm_custom_card_camera_label = "Chambre d'Eléna",
+      },
+    },
+    {
+      type = '"custom:button-card",
+      entity = "camera.camera_office_high",
+      template = "custom_card_camera",
+      show_icon = false,
+      variables = {
+        ulm_custom_card_camera_title = true,
+        ulm_custom_card_camera_aspect_ratio = "16:9",
+        ulm_custom_card_camera_label = "Bureau",
+      },
+    }
   ],
 }

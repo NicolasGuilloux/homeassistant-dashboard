@@ -109,6 +109,9 @@ in
           name = "Annoncer",
           entity = "input_select.annoucing_area",
           hide_state = true,
+          features = [
+            { type = "select-options" },
+          ]
         },
         {
           type = "custom:notify-card",
@@ -118,15 +121,35 @@ in
         },
       ],
     },
-    { type = '"custom:mushroom-title-card", title = "Mewenn" },
+    { type = '"custom:mushroom-title-card", title = "Vault" },
     {
-      type = '"tile",
-      entity = "switch.transmission_turtle_mode",
-      color = "teal",
-      show_entity_picture = false,
-      vertical = true,
-      hide_state = true,
+      type = '"grid",
+      square = false,
+      cards = [
+        {
+          type = '"tile",
+          name = "Mode Tortue",
+          entity = "switch.transmission_turtle_mode",
+          color = "teal",
+          vertical = true,
+        },
+        {
+          type = '"tile",
+          name = "Actifs",
+          entity = "sensor.transmission_torrents_actifs",
+          color = "light-blue",
+          vertical = true,
+        },
+        {
+          type = '"tile",
+          name = "Terminés",
+          entity = "sensor.transmission_torrents_termines",
+          color = "light-green",
+          vertical = true,
+        },
+      ],
     },
+    { type = '"custom:mushroom-title-card", title = "Mewenn" },
     computerStats
       {
         cpu_entity = "sensor.novermewenn_cpu",

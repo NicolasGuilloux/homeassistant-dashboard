@@ -31,5 +31,15 @@ roomView
         icon_color = "cyan",
         name = "Windows VM",
       },
+      {
+        type = '"custom:button-card",
+        entity = "camera.camera_office_high",
+        template = "custom_card_camera",
+        show_icon = false,
+        variables = {
+          ulm_custom_card_camera_title = false,
+          ulm_custom_card_camera_aspect_ratio = "16:9",
+        },
+      }
     ],
   }

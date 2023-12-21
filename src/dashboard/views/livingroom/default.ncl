@@ -38,12 +38,6 @@ roomView
               entity = "light.lightbulb_e",
               name = "Lampe à pied",
             },
-            {
-              type = '"tile",
-              entity = "light.tuya_smart_plug_orange_commutateur",
-              name = "Sapin de Noël",
-              color = "green",
-            },
           ],
         },
       {
@@ -60,5 +54,15 @@ roomView
           ulm_card_media_player_power_button = true,
         },
       },
+      {
+        type = '"custom:button-card",
+        entity = "camera.camera_livingroom_high",
+        template = "custom_card_camera",
+        show_icon = false,
+        variables = {
+          ulm_custom_card_camera_title = false,
+          ulm_custom_card_camera_aspect_ratio = "16:9",
+        },
+      }
     ],
   }

@@ -61,6 +61,7 @@ let Area = import "../../../lib/types/area.ncl" in
     color = "green",
     floor = 0,
     order = 6,
+    light_entity = "light.veranda",
     temperature_entity = "sensor.xiaomi_mijia_j_temperature",
     humidity_entity = "sensor.xiaomi_mijia_j_humidity",
   },
