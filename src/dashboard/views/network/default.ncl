@@ -30,10 +30,11 @@ in
   subview = true,
   cards = [
     roomChips {},
-    { type = '"custom:mushroom-title-card", title = "Invités" },
     {
       type = '"custom:auto-entities",
+      show_empty = false,
       card = {
+        title = "Invités",
         type = '"glance",
         columns = 3,
         show_name = true,

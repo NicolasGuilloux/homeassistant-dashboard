@@ -8,7 +8,7 @@ roomView
     chips = [
       {
         type = '"entity",
-        entity = "input_boolean.motion_light_kitchen",
+        entity = "input_boolean.kitchen_motion_light",
         icon_color = "cyan",
         content_info = "none",
         tap_action.action = "toggle",
@@ -17,7 +17,7 @@ roomView
     cards = [
       {
         type = '"tile",
-        entity = "light.ceiling_lamp_kitchen",
+        entity = "light.kitchen_ceiling_lights",
         name = "Plafonier",
       },
       {

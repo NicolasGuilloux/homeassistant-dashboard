@@ -14,7 +14,7 @@ roomView
             {
               type = '"custom:mushroom-light-card",
               name = "Plafonier Nico",
-              entity = "light.hue_lightbulb_c",
+              entity = "light.philips_lightbulb_d",
               use_light_color = true,
               show_brightness_control = true,
               secondary_info = "none",
@@ -24,7 +24,7 @@ roomView
             {
               type = '"custom:mushroom-light-card",
               name = "Plafonier Lolo",
-              entity = "light.hue_lightbulb_d",
+              entity = "light.philips_lightbulb_c",
               use_light_color = true,
               show_brightness_control = true,
               secondary_info = "none",
@@ -61,10 +61,10 @@ roomView
             # },
             powerOutletCard
               {
-                entity = "switch.tuya_smart_plug_blue_switch",
+                entity = "switch.tuya_outlet_blue",
                 name = "Déshumidificateur",
                 icon = "mdi:air-humidifier",
-                consumption_sensor = "sensor.tuya_smart_plug_blue_active_power",
+                consumption_sensor = "sensor.tuya_outlet_blue_energy",
                 color = "blue",
                 force_background_color = true,
               },

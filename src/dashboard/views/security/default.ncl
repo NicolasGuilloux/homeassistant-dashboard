@@ -9,7 +9,7 @@ let roomChips = import "../../templates/chips/room-chips.ncl" in
     roomChips {},
     {
       type = '"custom:button-card",
-      entity = "camera.camera_livingroom_high",
+      entity = "camera.livingroom_high",
       template = "custom_card_camera",
       show_icon = false,
       variables = {
@@ -20,7 +20,7 @@ let roomChips = import "../../templates/chips/room-chips.ncl" in
     },
     {
       type = '"custom:button-card",
-      entity = "camera.camera_bedroom_elena_high",
+      entity = "camera.bedroom_elena_high",
       template = "custom_card_camera",
       show_icon = false,
       variables = {
@@ -31,7 +31,7 @@ let roomChips = import "../../templates/chips/room-chips.ncl" in
     },
     {
       type = '"custom:button-card",
-      entity = "camera.camera_office_high",
+      entity = "camera.office_high",
       template = "custom_card_camera",
       show_icon = false,
       variables = {

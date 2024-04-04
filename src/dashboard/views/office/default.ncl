@@ -8,23 +8,23 @@ roomView
     cards = [
       {
         type = '"custom:mushroom-light-card",
-        entity = "light.office_ceiling_lamp",
+        entity = "light.aqara_wall_switch_a",
         name = "Plafonier"
       },
-      {
-        type = '"custom:button-card",
-        name = "Chauffage",
-        template = "card_thermostat",
-        entity = "climate.aqara_tvr_e1_thermostat",
-        variables = {
-          ulm_card_thermostat_name = "Chauffage",
-          ulm_card_thermostat_icon = "mdi:radiator",
-          ulm_card_thermostat_enable_collapse = false,
-          ulm_card_thermostat_enable_controls = false,
-          ulm_card_thermostat_enable_popup = true,
-          ulm_card_thermostat_enable_background_color = true,
-        },
-      },
+      #       {
+      #         type = '"custom:button-card",
+      #         name = "Chauffage",
+      #         template = "card_thermostat",
+      #         entity = "climate.aqara_tvr_e1_thermostat",
+      #         variables = {
+      #           ulm_card_thermostat_name = "Chauffage",
+      #           ulm_card_thermostat_icon = "mdi:radiator",
+      #           ulm_card_thermostat_enable_collapse = false,
+      #           ulm_card_thermostat_enable_controls = false,
+      #           ulm_card_thermostat_enable_popup = true,
+      #           ulm_card_thermostat_enable_background_color = true,
+      #         },
+      #       },
       {
         type = '"custom:mushroom-entity-card",
         entity = "switch.windows_vm",
@@ -33,7 +33,7 @@ roomView
       },
       {
         type = '"custom:button-card",
-        entity = "camera.camera_office_high",
+        entity = "camera.office_high",
         template = "custom_card_camera",
         show_icon = false,
         variables = {

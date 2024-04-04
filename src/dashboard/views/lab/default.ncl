@@ -1,56 +1,25 @@
 let roomChips = import "../../templates/chips/room-chips.ncl" in
 
-let appendIfHas | forall a. String -> Dyn -> a -> Array a -> Array a = fun field config element list =>
-    if std.record.has_field field config then
-      std.array.append element list
-    else
-      list
-  in
-
-let computerStats = fun config =>
+let graphCard = fun config =>
   {
-    type = '"grid",
-    columns = 2,
-    square = false,
-    cards =
-      []
-      |> appendIfHas
-        "cpu_entity"
-        config
-        {
-          type = '"custom:button-card",
-          template = "custom_card_bar_card",
-          variables = {
-            ulm_custom_card_bar_card_entity = config.cpu_entity,
-            ulm_custom_card_bar_card_name = "CPU",
-            ulm_custom_card_bar_card_color = "var(--google-blue)",
-          },
-        }
-      |> appendIfHas
-        "ram_entity"
-        config
-        {
-          type = '"custom:button-card",
-          template = "custom_card_bar_card",
-          variables = {
-            ulm_custom_card_bar_card_entity = config.ram_entity,
-            ulm_custom_card_bar_card_name = "RAM",
-            ulm_custom_card_bar_card_color = "var(--google-green)",
-            ulm_custom_card_bar_card_max = config.max_ram,
-          },
-        }
-      |> appendIfHas
-        "temp_entity"
-        config
-        {
-          type = '"custom:button-card",
-          template = "custom_card_bar_card",
-          variables = {
-            ulm_custom_card_bar_card_entity = config.temp_entity,
-            ulm_custom_card_bar_card_name = "Température",
-            ulm_custom_card_bar_card_color = "var(--google-red)",
-          },
-        }
+    type = '"custom:mini-graph-card",
+    hours_to_show = 24,
+    points_per_hour = 4,
+    update_interval = 30,
+    smoothing = false,
+    animate = true,
+    line_width = 2,
+    name = config.name,
+    entities = [
+      { entity = config.entity, color = config.color },
+    ],
+    show = {
+      name = true,
+      icon = true,
+      state = true,
+      legend = false,
+      fill = "fade",
+    },
   }
 in
 
@@ -107,7 +76,7 @@ in
         {
           type = '"tile",
           name = "Annoncer",
-          entity = "input_select.annoucing_area",
+          entity = "input_select.announcing_area",
           hide_state = true,
           features = [
             { type = "select-options" },
@@ -129,7 +98,7 @@ in
         {
           type = '"tile",
           name = "Mode Tortue",
-          entity = "switch.transmission_turtle_mode",
+          entity = "switch.transmission_mode_tortue",
           color = "teal",
           vertical = true,
         },
@@ -150,13 +119,16 @@ in
       ],
     },
     { type = '"custom:mushroom-title-card", title = "Mewenn" },
-    computerStats
-      {
-        cpu_entity = "sensor.novermewenn_cpu",
-        ram_entity = "sensor.novermewenn_ram",
-        temp_entity = "sensor.novermewenn_temp",
-        max_ram = 32000,
-      },
+    {
+      type = '"grid",
+      columns = 1,
+      square = false,
+      cards = [
+        graphCard { name = "CPU", entity = "sensor.novermewenn_cpu", color = "var(--google-blue)" },
+        graphCard { name = "RAM", entity = "sensor.novermewenn_ram", color = "var(--google-green)" },
+        graphCard { name = "Température", entity = "sensor.novermewenn_temp", color = "var(--google-red)" },
+      ]
+    },
     { type = '"custom:mushroom-title-card", title = "Imprimante" },
     {
       type = '"custom:mushroom-entity-card",

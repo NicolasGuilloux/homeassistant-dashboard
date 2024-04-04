@@ -35,19 +35,19 @@ in
       {
         title = "Salon",
         lights = [
-          {
-            name = "Luminaire avant",
-            entity = "light.luminaire_a",
-            has_brightness = true,
-          },
+          # {
+          #   name = "Luminaire avant",
+          #   entity = "light.luminaire_a",
+          #   has_brightness = true,
+          # },
           {
             name = "Luminaire arrière",
-            entity = "light.luminaire_b",
+            entity = "light.livingroom_ceiling_lights_a",
             has_brightness = true,
           },
           {
             name = "Lampe sur pied",
-            entity = "light.lightbulb_e",
+            entity = "light.ikea_lightbulb_e",
             has_brightness = true,
           },
         ],
@@ -57,7 +57,7 @@ in
         lights = [
           {
             name = "Plafonier",
-            entity = "light.ceiling_lamp_kitchen",
+            entity = "light.kitchen_ceiling_lights",
           },
         ],
       },
@@ -66,7 +66,7 @@ in
         lights = [
           {
             name = "Plafonier",
-            entity = "light.entrance_ceiling_lamp_1",
+            entity = "light.entrance_lights",
           },
         ],
       },
@@ -75,7 +75,7 @@ in
         lights = [
           {
             name = "Plafoniers",
-            entity = "light.palier",
+            entity = "light.landingfirstfloor",
           },
         ],
       },
@@ -84,7 +84,7 @@ in
         lights = [
           {
             name = "Terrasse",
-            entity = "light.ceilling_lamp_outdoor",
+            entity = "light.pergola",
           },
         ],
       },
@@ -93,11 +93,11 @@ in
         lights = [
           {
             name = "Plafonier Nico",
-            entity = "light.hue_lightbulb_c",
+            entity = "light.philips_lightbulb_d",
           },
           {
             name = "Plafonier Lolo",
-            entity = "light.hue_lightbulb_d",
+            entity = "light.philips_lightbulb_c",
           },
         ],
       },
@@ -106,7 +106,7 @@ in
         lights = [
           {
             name = "Plafonier",
-            entity = "light.office_ceiling_lamp",
+            entity = "light.aqara_wall_switch_a",
           },
         ],
       },

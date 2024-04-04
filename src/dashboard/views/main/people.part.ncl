@@ -13,11 +13,32 @@ let peopleCard = fun config =>
     },
   }
 in
+let locationInHouseCard = fun config =>
+  {
+    type = '"conditional",
+    conditions = [
+      {
+        condition = "state",
+        entity = config.entity_id,
+        state_not = "not_home",
+      }
+    ],
+    card = {
+      type = '"custom:mushroom-template-card",
+      icon = "",
+      entity = config.entity_id,
+      primary = "{{ states." ++ config.entity_id ++ ".state }} - {{ states." ++ config.entity_id ++ ".attributes.distance }}m",
+      tap_action.action = "more-info",
+    },
+  }
+in
 {
   type = '"vertical-stack",
   cards = [
     {
-      type = '"horizontal-stack",
+      type = '"grid",
+      columns = 2,
+      square = false,
       cards = [
         peopleCard
           {
@@ -32,6 +53,14 @@ in
             entity = "person.laurianne_thomann",
             driving_entity = "binary_sensor.laurianne_driving",
             phone_base_entity = "sensor.iphone_de_laurianne",
+          },
+        locationInHouseCard
+          {
+            entity_id = "sensor.noverphone_ble_tracker",
+          },
+        locationInHouseCard
+          {
+            entity_id = "sensor.laurianne_phone_ble_tracker",
           },
       ],
     },
