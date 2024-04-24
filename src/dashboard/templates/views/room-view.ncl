@@ -14,12 +14,12 @@ fun mArea mConfig =>
   let area = mArea | (import "../../../../lib/types/area.ncl") in
   let config = mConfig | Config in
 
-  let appendIfHas | forall a. String -> a -> Array a -> Array a = fun field element list =>
-      if std.record.has_field field area then
-        std.array.append element list
-      else
-        list
-    in
+  let appendIfHas = fun field element list =>
+    if std.record.has_field field area then
+      std.array.append element list
+    else
+      list
+  in
   {
     title = area.name,
     path = area.url,

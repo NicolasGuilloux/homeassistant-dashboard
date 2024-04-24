@@ -22,7 +22,7 @@ roomView
       },
       {
         type = '"custom:button-card",
-        entity = "camera.bedroom_elena_high",
+        entity = "camera.bedroom_elena_high_resolution_channel",
         template = "custom_card_camera",
         show_icon = false,
         variables = {

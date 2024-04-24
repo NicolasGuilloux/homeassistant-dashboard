@@ -22,22 +22,22 @@ roomView
       },
       {
         type = '"custom:mushroom-template-card",
-        entity = "switch.outlet_b",
+        entity = "switch.ikea_outlet_b",
         primary = "Yaourtière",
         icon = "mdi:pot-mix-outline",
         badge_color = "green",
         primary_info = "name",
         secondary_info = "none",
-        tap_action.action = "toggle",
+        tap_action.action = "more-info",
         hold_action.action = "more-info",
         icon_color = m%"
-          {% if is_state('timer.yaourtiere','active') %}
+          {% if is_state('timer.yaourt_maker_countdown','active') %}
             cyan
           {% endif %}
         "%,
         secondary = m%"
-          {% if is_state('timer.yaourtiere','active') %}
-            {% set finish_timestamp = as_datetime(state_attr('timer.yaourtiere','finishes_at')) %}
+          {% if is_state('timer.yaourt_maker_countdown','active') %}
+            {% set finish_timestamp = as_datetime(state_attr('timer.yaourt_maker_countdown','finishes_at')) %}
             {% set current_timestamp = now() %}
             {% set remaining_in_seconds = (finish_timestamp - current_timestamp).seconds %}
             {{ timedelta(seconds = remaining_in_seconds) }}
@@ -46,7 +46,7 @@ roomView
           {% endif %}
         "%,
         badge_icon = m%"
-          {% if is_state('timer.yaourtiere','active') %}
+          {% if is_state('timer.yaourt_maker_countdown','active') %}
             mdi:timer-outline
           {% endif %}
         "%,

@@ -33,7 +33,7 @@ roomView
       },
       {
         type = '"custom:button-card",
-        entity = "camera.office_high",
+        entity = "camera.office_high_resolution_channel",
         template = "custom_card_camera",
         show_icon = false,
         variables = {

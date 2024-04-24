@@ -40,6 +40,10 @@ in
           show_conditions = false,
           show_temperature = true,
         },
+        {
+          type = '"entity",
+          entity = "sensor.instant_power_usage",
+        },
       ],
     },
     {

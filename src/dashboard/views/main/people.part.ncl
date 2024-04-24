@@ -19,15 +19,15 @@ let locationInHouseCard = fun config =>
     conditions = [
       {
         condition = "state",
-        entity = config.entity_id,
-        state_not = "not_home",
+        entity = config.entity_id ++ "_area",
+        state_not = "unknown",
       }
     ],
     card = {
       type = '"custom:mushroom-template-card",
       icon = "",
-      entity = config.entity_id,
-      primary = "{{ states." ++ config.entity_id ++ ".state }} - {{ states." ++ config.entity_id ++ ".attributes.distance }}m",
+      entity = config.entity_id ++ "_area",
+      primary = "{{ states." ++ config.entity_id ++ "_area.state }} - {{ states." ++ config.entity_id ++ "_distance.state }}m",
       tap_action.action = "more-info",
     },
   }
@@ -56,11 +56,11 @@ in
           },
         locationInHouseCard
           {
-            entity_id = "sensor.noverphone_ble_tracker",
+            entity_id = "sensor.noverphone_bluetooth_tracker",
           },
         locationInHouseCard
           {
-            entity_id = "sensor.laurianne_phone_ble_tracker",
+            entity_id = "sensor.laurianne_phone_bluetooth_tracker",
           },
       ],
     },
