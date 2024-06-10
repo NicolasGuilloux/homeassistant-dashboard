@@ -15,6 +15,7 @@ let Type = [|
   '"picture-entity",
   '"template",
   '"tile",
+  '"custom:vertical-stack-in-card",
 |]
 in
 

@@ -28,10 +28,6 @@ roomView
         icon_color = "light-blue",
         tap_action.action = "toggle",
       },
-      {
-        type = '"entity",
-        entity = "sensor.iphone_de_laurianne_distance",
-      },
     ],
     cards = [
       gridCard

@@ -22,6 +22,14 @@ in
     | Nullable String
     | default
     = null,
+  speaker_entity
+    | Nullable String
+    | default
+    = null,
+  television_entity
+    | Nullable String
+    | default
+    = null,
   temperature_entity
     | Nullable String
     | default

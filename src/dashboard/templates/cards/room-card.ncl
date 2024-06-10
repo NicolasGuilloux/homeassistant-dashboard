@@ -10,13 +10,13 @@ fun input =>
         tap_action.action = "toggle",
       },
       {
-        entity_id = config.temperature_entity,
-        templates = ["red_no_state"],
+        entity_id = config.speaker_entity,
+        templates = ["blue_on"],
         tap_action.action = "more-info",
       },
       {
-        entity_id = config.humidity_entity,
-        templates = ["blue_no_state"],
+        entity_id = config.television_entity,
+        templates = ["red_on"],
         tap_action.action = "more-info",
       },
     ]

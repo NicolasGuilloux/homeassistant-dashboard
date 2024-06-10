@@ -1,4 +1,5 @@
 let catChip = import "../../templates/chips/cat-chip.ncl" in
+let titleCard = import "../../../../lib/cards/minimalist/title-card.ncl" in
 
 let pageTile = fun config =>
   {
@@ -22,13 +23,7 @@ let pageTile = fun config =>
   }
 in
 {
-  type = '"custom:vertical-stack-in-card",
-  style = m%"
-      ha-card {
-        padding-top: 1em;
-        padding-bottom: 1em;
-      }
-    "%,
+  type = '"vertical-stack",
   cards = [
     {
       type = '"custom:mushroom-chips-card",
@@ -44,39 +39,23 @@ in
           type = '"entity",
           entity = "sensor.instant_power_usage",
         },
+        {
+          type = '"template",
+          icon = "mdi:account-tie-voice",
+          tap_action.action = "assist",
+        }
       ],
     },
     {
       type = '"custom:mushroom-chips-card",
       alignment = "center",
-      style = m%"
-          ha-card {
-            padding-top: 1em;
-          }
-        "%,
       chips = [
         (catChip "binary_sensor.pet_alf"),
         (catChip "binary_sensor.pet_arwen"),
         (catChip "binary_sensor.pet_albus"),
       ],
     },
-    {
-      type = '"custom:mushroom-title-card",
-      alignment = "center",
-      secondary = "",
-      title = m%"
-        {% set time = now().hour %}
-        {% if (time >= 18) %}
-          Bonsoir, {{user}} !
-        {% elif (time >= 12) %}
-          Bon après-midi, {{user}} !
-        {% elif (time >= 5) %}
-          Bonne matinée, {{user}} !
-        {% else %}
-          Bonjour, {{user}} !
-        {% endif %}
-      "%
-    },
+    titleCard "",
     {
       type = '"horizontal-stack",
       cards = [
@@ -106,5 +85,23 @@ in
           },
       ],
     },
+    titleCard "",
+    # {
+    #   type = '"custom:mushroom-title-card",
+    #   alignment = "center",
+    #   secondary = "",
+    #   title = m%"
+    #     {% set time = now().hour %}
+    #     {% if (time >= 18) %}
+    #       Bonsoir, {{user}} !
+    #     {% elif (time >= 12) %}
+    #       Bon après-midi, {{user}} !
+    #     {% elif (time >= 5) %}
+    #       Bonne matinée, {{user}} !
+    #     {% else %}
+    #       Bonjour, {{user}} !
+    #     {% endif %}
+    #   "%
+    # },
   ]
 }
